@@ -4,23 +4,47 @@
 		<title>AngularJS Introduction</title>
       
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="bower_components/bootstrap/dist/bootstrap.min.css"/>
-		<link href="css/style.css"/>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 
 	</head>
 	<body ng-controller="mainCtrl">
-		<header>
-			<h1>Contacts List</h1>
-		</header>
 		<section class="container">
+		<h1>Contacts List</h1>
+		<div class="row heading">
+			<div class="col-3">
+				Name
+			</div>
+			<div class="col-3">
+				Email
+			</div>
+			<div class="col-3">
+				Mobile
+			</div>
+			<div class="col-3">
+				Actions
+			</div>
+		</div>
 		<div class="row contact" ng-repeat="item in contacts.contacts">
-			<div class="col-3">>
+			<div class="col-3">
 				{{item.name}}
+			</div>
+			<div class="col-3">
+				{{item.email}}
+			</div>
+			<div class="col-3">
+				{{item.phone}}
+			</div>
+			<div class="col-3">
+				<input type="button" class="btn btn-primary" value="Edit" ng-click="editRecord(item.id)"/>
+				<input type="button" class="btn btn-danger" value="Delete" ng-click="deleteRecord(item.id)"/>  
 			</div>
 		</div>
 		</section>
     
 	</body>
+	<script src="bower_components/jQuery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="scripts/app.js"></script>
 </html>

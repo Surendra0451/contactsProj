@@ -1,0 +1,7 @@
+.heading div {
+	font-weight: 600;
+}
+.heading, .contact {
+	padding: 8px 0;
+	border: 1px solid #d3d3d3;
+}

@@ -25,7 +25,7 @@
 				Actions
 			</div>
 		</div>
-		<div class="row contact" ng-repeat="item in contacts.contacts">
+		<div class="row contact" ng-repeat="item in contacts">
 			<div class="col-3">
 				{{item.name}}
 			</div>
@@ -36,8 +36,32 @@
 				{{item.phone}}
 			</div>
 			<div class="col-3">
-				<input type="button" class="btn btn-primary" value="Edit" ng-click="editRecord(item.id)"/>
+				<input type="button" class="btn btn-primary" value="Edit" ng-click="editRecord($index)"/>
 				<input type="button" class="btn btn-danger" value="Delete" ng-click="deleteRecord(item.id)"/>  
+			</div>
+		</div>
+		<div class="modal" tabindex="-1" role="dialog" id="edit_modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<label>Name</label>
+						<input type="text" class="form-control" ng-model="newObj.name"/>
+						<label>Email</label>
+						<input type="text" class="form-control" ng-model="newObj.email"/>
+						<label>Phone</label>
+						<input type="text" class="form-control" ng-model="newObj.phone"/>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="updateRecord()">Save changes</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		</section>

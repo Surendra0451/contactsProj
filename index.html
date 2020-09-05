@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="contactsApp">
+	<head>
+		<title>AngularJS Introduction</title>
+      
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="bower_components/bootstrap/dist/bootstrap.min.css"/>
+		<link href="css/style.css"/>
+
+	</head>
+	<body ng-controller="mainCtrl">
+		<header>
+			<h1>Contacts List</h1>
+		</header>
+		<section class="container">
+		<div class="row contact" ng-repeat="item in contacts.contacts">
+			<div class="col-3">>
+				{{item.name}}
+			</div>
+		</div>
+		</section>
+    
+	</body>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+</html>
